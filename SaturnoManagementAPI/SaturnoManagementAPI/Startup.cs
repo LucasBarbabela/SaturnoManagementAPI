@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SaturnoManagementAPI.Configuração;
+using Microsoft.EntityFrameworkCore;
 
 namespace SaturnoManagementAPI
 {
@@ -25,6 +27,11 @@ namespace SaturnoManagementAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddEntityFrameworkSqlServer().AddDbContext<ERPContext>(
+            //    options => options.UseSqlServer(
+            ///        Configuration.GetConnectionString("teste")));
+            services.AddDbContext<ERPContext>(opt => opt.UseInMemoryDatabase("Database"));
+            services.AddScoped<ERPContext, ERPContext>();
             services.AddControllers();
         }
 
