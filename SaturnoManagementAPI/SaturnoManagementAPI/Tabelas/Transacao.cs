@@ -10,10 +10,10 @@ namespace SaturnoManagementAPI.Tabelas
     public class Transacao
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
         public Cliente Cliente { get; set; }
         [Required]
-        public Produto Produtos { get; set; }
+        public IEnumerable<Produto> Produtos { get; set; }
         [Required]
         public double Preco { get; set; }
         public DateTime Data { get; set; }

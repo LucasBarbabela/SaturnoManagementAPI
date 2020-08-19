@@ -10,7 +10,7 @@ namespace SaturnoManagementAPI.Tabelas
     public class Cliente
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
         [Required]
         [MaxLength(60, ErrorMessage = "Ultrapassado o limite de 60 caracteres.")]
         [MinLength(5, ErrorMessage = "Ultrapassado o limite mínimo de 5 caracteres.")]
@@ -23,7 +23,7 @@ namespace SaturnoManagementAPI.Tabelas
         public string Telefone { get; set; }    
         public string Email { get; set; }
         [Required]
-        public Endereco Endereco { get; set; }
+        public IEnumerable<Endereco> Endereco { get; set; }
         [Required]
         public PermissaoEnum Permissao { get; set; }
 

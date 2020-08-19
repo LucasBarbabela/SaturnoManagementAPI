@@ -21,7 +21,8 @@ namespace SaturnoManagementAPI.Configuração
         public virtual DbSet<Produto> Produtos { get; set; }
         public virtual DbSet<Transacao> Transacoes { get; set; }
 
-  
+
+
 
     }
 }

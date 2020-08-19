@@ -9,8 +9,7 @@ namespace SaturnoManagementAPI.Tabelas
 {
     public class Endereco
     {
-        [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
         [Required]
         [StringLength(2)]
         public string Estado { get; set; }

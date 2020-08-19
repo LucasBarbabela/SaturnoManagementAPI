@@ -18,18 +18,28 @@ namespace SaturnoManagementAPI.Controllers
 
         [HttpGet]
         [Route("")]
-        public int Get([FromServices] ERPContext context)
+        public string Get([FromServices] ERPContext context)
         {
-            Endereco a = new Endereco();
-            a.Bairro = "2312323";
-            a.CEP = "30535610";
-            a.Cidade = "alola";
-            a.Estado = "MG";
-            a.Numero = 23;
-            a.Permissao = PermissaoEnum.Colaborador;
-            context.Enderecos.Add(a);
-            context.SaveChanges();
-            return context.Enderecos.Last().ID;
+            try
+            {
+                Endereco a = new Endereco();
+                a.Bairro = "2312323";
+                a.CEP = "30535610";
+                a.Cidade = "alola";
+                a.Estado = "MG";
+                a.Numero = 23;
+                a.Permissao = PermissaoEnum.Colaborador;
+                context.Enderecos.Add(a);
+                context.SaveChanges();
+                //return context.Enderecos.Last().ID;
+                return "deu";
+            }
+            catch (Exception e)
+            {
+                return e.InnerException.Message;
+                //return 0;
+
+            }
         }
     }
 }
