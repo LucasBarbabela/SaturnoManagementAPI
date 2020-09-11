@@ -7,7 +7,8 @@ namespace SaturnoManagementAPI.Enum
 {
     public enum PermissaoEnum
     {
-        Colaborador = 1,
-        Gerente = 2,
+        Reciclagem = 1,
+        Vendas = 2,
+        Administrador = 3
     }
 }

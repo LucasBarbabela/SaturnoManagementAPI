@@ -19,7 +19,6 @@ namespace SaturnoManagementAPI.Tabelas
         [Required]
         public double PrecoCompra { get; set; }
         public DateTime DataCompra { get; set; }
-        public IEnumerable<Cliente> ClienteComprado { get; set; }
         [Required]
         public PermissaoEnum Permissao { get; set; }
 

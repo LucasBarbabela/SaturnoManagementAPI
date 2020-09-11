@@ -12,6 +12,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using SaturnoManagementAPI.Configuração;
 using Microsoft.EntityFrameworkCore;
+using SaturnoManagementAPI.Interfaces;
+using SaturnoManagementAPI.Tabelas;
+using SaturnoManagementAPI.Model;
 
 namespace SaturnoManagementAPI
 {
@@ -31,6 +34,7 @@ namespace SaturnoManagementAPI
        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             // services.AddDbContext<ERPContext>(opt => opt.UseInMemoryDatabase("Database"));
             services.AddScoped<ERPContext, ERPContext>();
+            services.AddScoped<ICliente, ClienteModel>();
             services.AddControllers();
         }
 

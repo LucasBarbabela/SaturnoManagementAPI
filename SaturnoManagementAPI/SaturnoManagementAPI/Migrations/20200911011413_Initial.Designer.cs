@@ -10,7 +10,7 @@ using SaturnoManagementAPI.Configuração;
 namespace SaturnoManagementAPI.Migrations
 {
     [DbContext(typeof(ERPContext))]
-    [Migration("20200819130241_Initial")]
+    [Migration("20200911011413_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,15 +35,16 @@ namespace SaturnoManagementAPI.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(60)")
                         .HasMaxLength(60);
 
                     b.Property<int>("Permissao")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProdutoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Telefone")
@@ -53,61 +54,7 @@ namespace SaturnoManagementAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProdutoId");
-
                     b.ToTable("Clientes");
-                });
-
-            modelBuilder.Entity("SaturnoManagementAPI.Tabelas.Endereco", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Bairro")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(32)")
-                        .HasMaxLength(32);
-
-                    b.Property<string>("CEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(8)")
-                        .HasMaxLength(8);
-
-                    b.Property<string>("Cidade")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(32)")
-                        .HasMaxLength(32);
-
-                    b.Property<int?>("ClienteId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Complemento")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Estado")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(2)")
-                        .HasMaxLength(2);
-
-                    b.Property<int>("Numero")
-                        .HasColumnType("int")
-                        .HasMaxLength(6);
-
-                    b.Property<int>("Permissao")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Rua")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(32)")
-                        .HasMaxLength(32);
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClienteId");
-
-                    b.ToTable("Enderecos");
                 });
 
             modelBuilder.Entity("SaturnoManagementAPI.Tabelas.Produto", b =>
@@ -173,18 +120,34 @@ namespace SaturnoManagementAPI.Migrations
                     b.ToTable("Transacoes");
                 });
 
-            modelBuilder.Entity("SaturnoManagementAPI.Tabelas.Cliente", b =>
+            modelBuilder.Entity("SaturnoManagementAPI.Tabelas.Usuario", b =>
                 {
-                    b.HasOne("SaturnoManagementAPI.Tabelas.Produto", null)
-                        .WithMany("ClienteComprado")
-                        .HasForeignKey("ProdutoId");
-                });
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SaturnoManagementAPI.Tabelas.Endereco", b =>
-                {
-                    b.HasOne("SaturnoManagementAPI.Tabelas.Cliente", null)
-                        .WithMany("Endereco")
-                        .HasForeignKey("ClienteId");
+                    b.Property<string>("CPF")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeUsuario")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Permissao")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sobrenome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("SaturnoManagementAPI.Tabelas.Produto", b =>

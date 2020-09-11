@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using SaturnoManagementAPI.DTO;
 using SaturnoManagementAPI.Tabelas;
 
 namespace SaturnoManagementAPI.Configuração
@@ -16,10 +17,10 @@ namespace SaturnoManagementAPI.Configuração
 
         }
 
-        public virtual DbSet<Endereco> Enderecos { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Produto> Produtos { get; set; }
         public virtual DbSet<Transacao> Transacoes { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
 
 
 

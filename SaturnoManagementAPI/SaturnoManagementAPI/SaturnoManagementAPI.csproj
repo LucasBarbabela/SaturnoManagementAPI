@@ -5,12 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200819125614_Inicial.cs" />
-    <Compile Remove="Migrations\20200819125614_Inicial.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DTO\" />
+    <Compile Remove="NewFolder\**" />
+    <Content Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>

@@ -23,7 +23,7 @@ namespace SaturnoManagementAPI.Tabelas
         public string Telefone { get; set; }    
         public string Email { get; set; }
         [Required]
-        public IEnumerable<Endereco> Endereco { get; set; }
+        public string Endereco { get; set; }
         [Required]
         public PermissaoEnum Permissao { get; set; }
 
