@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SaturnoManagementAPI.Configuração;
 using SaturnoManagementAPI.DTO;
 using SaturnoManagementAPI.Enum;
 using SaturnoManagementAPI.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
@@ -24,38 +26,43 @@ namespace SaturnoManagementAPI.Controllers
         [HttpPost]
         [Route("Cadastrar")]
         public void CadastarCliente(ClienteDTO NovoCliente)
-        {
+        { 
             interfaceCliente.CadastrarCliente(NovoCliente);
-
-
         }
 
         [HttpGet]
         [Route("Buscar/{IdCliente}")]
         public ClienteDTO BuscarCliente(int IdCliente)
         {
-            return new ClienteDTO();
+            return interfaceCliente.BuscarCliente(IdCliente);
         }
 
         [HttpGet]
         [Route("Listar/{TipoCliente}")] 
         public List<ClienteDTO> ListarCliente(PermissaoEnum TipoCliente)
         {
-            return new List<ClienteDTO>();
+            return interfaceCliente.ListarCliente(TipoCliente);
         }
 
         [HttpDelete]
         [Route("Deletar/{IdCliente}")]
-        public ClienteDTO ListarCliente(int IdCliente)
+        public ClienteDTO DeletarCliente(int IdCliente)
         {
-            return new ClienteDTO();
+            return interfaceCliente.DeletarCliente(IdCliente);
         }
 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPut]
-        [Route("Alterar")]
-        public ClienteDTO AlterarCliente(ClienteDTO Cliente)
+        [Route("Alterar/{IdCliente}")]
+        public IActionResult AlterarCliente([FromBody]ClienteDTO ClienteAlterar, int IdCliente)
         {
-            return Cliente;
+            int retorno = interfaceCliente.AlterarCliente(ClienteAlterar, IdCliente);
+
+            if (retorno == 201)
+                return Ok(ClienteAlterar);
+            else
+                return NotFound();
         }
 
     }

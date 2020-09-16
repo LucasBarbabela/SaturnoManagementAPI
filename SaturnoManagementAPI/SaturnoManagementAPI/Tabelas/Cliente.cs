@@ -1,14 +1,33 @@
-﻿using SaturnoManagementAPI.Enum;
+﻿using SaturnoManagementAPI.DTO;
+using SaturnoManagementAPI.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+
 
 namespace SaturnoManagementAPI.Tabelas
 {
     public class Cliente
     {
+        public Cliente(ClienteDTO cliente)
+        {
+            this.Id = cliente.Id;
+            this.Nome = cliente.Nome;
+            this.CPF = cliente.CPF;
+            this.Telefone = cliente.Telefone;
+            this.Email = cliente.Email;
+            this.Endereco = JsonConvert.SerializeObject(cliente.Endereco);
+            this.Permissao = cliente.Permissao;
+        }
+        public Cliente()
+        {
+
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
