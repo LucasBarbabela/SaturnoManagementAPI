@@ -48,7 +48,6 @@ C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoMan
 C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\obj\Debug\netcoreapp3.1\SaturnoManagementAPI.csprojAssemblyReference.cache
 C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\obj\Debug\netcoreapp3.1\SaturnoManagementAPI.csproj.CoreCompileInputs.cache
 C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\obj\Debug\netcoreapp3.1\SaturnoManagementAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\obj\Debug\netcoreapp3.1\SaturnoManagementAPI.AssemblyInfoInputs.cache

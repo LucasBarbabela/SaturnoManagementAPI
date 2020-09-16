@@ -30,18 +30,31 @@ namespace SaturnoManagementAPI.Controllers
             interfaceCliente.CadastrarCliente(NovoCliente);
         }
 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet]
         [Route("Buscar/{IdCliente}")]
-        public ClienteDTO BuscarCliente(int IdCliente)
+        public IActionResult BuscarCliente(int IdCliente)
         {
-            return interfaceCliente.BuscarCliente(IdCliente);
+            ClienteDTO retorno = interfaceCliente.BuscarCliente(IdCliente);
+            if (retorno != null)
+                return Ok(retorno);
+            else
+                return NotFound();
         }
 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet]
         [Route("Listar/{TipoCliente}")] 
-        public List<ClienteDTO> ListarCliente(PermissaoEnum TipoCliente)
+        public IActionResult ListarCliente(PermissaoEnum TipoCliente)
         {
-            return interfaceCliente.ListarCliente(TipoCliente);
+            List<ClienteDTO> retorno = interfaceCliente.ListarCliente(TipoCliente);
+
+            if (retorno != null)
+                return Ok(retorno);
+            else
+                return NotFound();
         }
 
         [HttpDelete]

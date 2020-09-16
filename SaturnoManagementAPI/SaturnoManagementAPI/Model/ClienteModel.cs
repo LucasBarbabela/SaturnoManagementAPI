@@ -51,13 +51,23 @@ namespace SaturnoManagementAPI.Model
         {
             try
             {
-                IEnumerable<Cliente> ClientesPermissao = contexto.Clientes.Where(x => x.Permissao == TipoCliente);
+                IEnumerable<Cliente> ClientesPermissao;
+                if (TipoCliente == PermissaoEnum.Administrador)
+                {
+                    ClientesPermissao = contexto.Clientes.ToList();
+                } else
+                {
+                    ClientesPermissao = contexto.Clientes.Where(x => x.Permissao == TipoCliente);
+                }
+
                 List<ClienteDTO> ClienteDTOLista = new List<ClienteDTO>();
+
                 foreach (Cliente cliente in ClientesPermissao)
                 {
                     ClienteDTOLista.Add(new ClienteDTO(cliente));
                 }
                 return ClienteDTOLista;
+
             } 
             catch (Exception e)
             {
