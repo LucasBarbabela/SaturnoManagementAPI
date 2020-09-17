@@ -1,4 +1,5 @@
-﻿using SaturnoManagementAPI.Enum;
+﻿using SaturnoManagementAPI.DTO;
+using SaturnoManagementAPI.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,6 +10,20 @@ namespace SaturnoManagementAPI.Tabelas
 {
     public class Produto
     {
+        public Produto(ProdutoDTO produto)
+        {
+            this.Nome = produto.Nome;
+            this.Descricao = produto.Descricao;
+            this.PrecoCompra = produto.PrecoCompra;
+            this.Quantidade = produto.Quantidade;
+            this.Permissao = produto.Permissao;
+        }
+
+        public Produto()
+        {
+
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -17,8 +32,8 @@ namespace SaturnoManagementAPI.Tabelas
         public string Nome { get; set; }
         public string Descricao { get; set; }
         [Required]
-        public double PrecoCompra { get; set; }
-        public DateTime DataCompra { get; set; }
+        public decimal PrecoCompra { get; set; }
+        public int Quantidade { get; set; }
         [Required]
         public PermissaoEnum Permissao { get; set; }
 

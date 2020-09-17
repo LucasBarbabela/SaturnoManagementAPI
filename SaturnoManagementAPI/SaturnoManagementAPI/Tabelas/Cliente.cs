@@ -15,7 +15,6 @@ namespace SaturnoManagementAPI.Tabelas
     {
         public Cliente(ClienteDTO cliente)
         {
-            this.Id = cliente.Id;
             this.Nome = cliente.Nome;
             this.CPF = cliente.CPF;
             this.Telefone = cliente.Telefone;

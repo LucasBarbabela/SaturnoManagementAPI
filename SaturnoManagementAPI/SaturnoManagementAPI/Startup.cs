@@ -35,6 +35,7 @@ namespace SaturnoManagementAPI
             // services.AddDbContext<ERPContext>(opt => opt.UseInMemoryDatabase("Database"));
             services.AddScoped<ERPContext, ERPContext>();
             services.AddScoped<ICliente, ClienteModel>();
+            services.AddScoped<IProduto, ProdutoModel>();
             services.AddControllers();
         }
 

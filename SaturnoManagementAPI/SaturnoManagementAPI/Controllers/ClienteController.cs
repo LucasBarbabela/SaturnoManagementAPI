@@ -11,6 +11,9 @@ using System.Runtime.InteropServices;
 namespace SaturnoManagementAPI.Controllers
 {
 
+    //TO DO: Alterar retorno int dos métodos;
+    //Corrigir nome dos métodos.
+
     [ApiController]
     [Route("v1/Cliente")]
     public class ClienteController : ControllerBase

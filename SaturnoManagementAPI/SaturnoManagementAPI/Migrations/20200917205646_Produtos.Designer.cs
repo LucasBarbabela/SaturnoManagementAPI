@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SaturnoManagementAPI.Configuração;
 
 namespace SaturnoManagementAPI.Migrations
 {
     [DbContext(typeof(ERPContext))]
-    partial class ERPContextModelSnapshot : ModelSnapshot
+    [Migration("20200917205646_Produtos")]
+    partial class Produtos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
