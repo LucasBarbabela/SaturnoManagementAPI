@@ -9,10 +9,10 @@ namespace SaturnoManagementAPI.Interfaces
 {
     public interface ICliente
     {
-        public void CadastrarCliente(ClienteDTO NovoCliente);
-        public ClienteDTO BuscarCliente(int IdCliente);
-        public List<ClienteDTO> ListarCliente(PermissaoEnum TipoCliente);
-        public ClienteDTO DeletarCliente(int IdCliente);
-        public int AlterarCliente(ClienteDTO Cliente, int IdCliente);
+        public void Cadastrar(ClienteDTO NovoCliente);
+        public ClienteDTO Buscar(int IdCliente);
+        public List<ClienteDTO> Listar(PermissaoEnum TipoCliente);
+        public ClienteDTO Deletar(int IdCliente);
+        public int Alterar(ClienteDTO Cliente, int IdCliente);
     }
 }

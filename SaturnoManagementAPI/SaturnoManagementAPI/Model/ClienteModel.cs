@@ -21,7 +21,7 @@ namespace SaturnoManagementAPI.Model
             contexto = _contexto;
         }
 
-        public void CadastrarCliente(ClienteDTO NovoCliente)
+        public void Cadastrar(ClienteDTO NovoCliente)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace SaturnoManagementAPI.Model
             }
         }
 
-        public ClienteDTO BuscarCliente(int IdCliente)
+        public ClienteDTO Buscar(int IdCliente)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace SaturnoManagementAPI.Model
             }
         }
 
-        public List<ClienteDTO> ListarCliente(PermissaoEnum TipoCliente)
+        public List<ClienteDTO> Listar(PermissaoEnum TipoCliente)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace SaturnoManagementAPI.Model
 
         }
 
-        public ClienteDTO DeletarCliente(int IdCliente)
+        public ClienteDTO Deletar(int IdCliente)
         {
             try
             {
@@ -90,7 +90,7 @@ namespace SaturnoManagementAPI.Model
             }
         }
 
-        public int AlterarCliente(ClienteDTO ClienteAtualizado, int IdCliente)
+        public int Alterar(ClienteDTO ClienteAtualizado, int IdCliente)
         {
             try
             {

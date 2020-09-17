@@ -11,8 +11,6 @@ using System.Runtime.InteropServices;
 namespace SaturnoManagementAPI.Controllers
 {
 
-    //TO DO: Alterar retorno int dos métodos;
-    //Corrigir nome dos métodos.
 
     [ApiController]
     [Route("v1/Cliente")]
@@ -28,7 +26,7 @@ namespace SaturnoManagementAPI.Controllers
 
         [HttpPost]
         [Route("Cadastrar")]
-        public void CadastarCliente(ClienteDTO NovoCliente)
+        public void Cadastar(ClienteDTO NovoCliente)
         { 
             interfaceCliente.CadastrarCliente(NovoCliente);
         }
@@ -37,7 +35,7 @@ namespace SaturnoManagementAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet]
         [Route("Buscar/{IdCliente}")]
-        public IActionResult BuscarCliente(int IdCliente)
+        public IActionResult Buscar(int IdCliente)
         {
             ClienteDTO retorno = interfaceCliente.BuscarCliente(IdCliente);
             if (retorno != null)
@@ -50,7 +48,7 @@ namespace SaturnoManagementAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet]
         [Route("Listar/{TipoCliente}")] 
-        public IActionResult ListarCliente(PermissaoEnum TipoCliente)
+        public IActionResult Listar(PermissaoEnum TipoCliente)
         {
             List<ClienteDTO> retorno = interfaceCliente.ListarCliente(TipoCliente);
 
@@ -62,7 +60,7 @@ namespace SaturnoManagementAPI.Controllers
 
         [HttpDelete]
         [Route("Deletar/{IdCliente}")]
-        public ClienteDTO DeletarCliente(int IdCliente)
+        public ClienteDTO Deletar(int IdCliente)
         {
             return interfaceCliente.DeletarCliente(IdCliente);
         }
@@ -71,7 +69,7 @@ namespace SaturnoManagementAPI.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpPut]
         [Route("Alterar/{IdCliente}")]
-        public IActionResult AlterarCliente([FromBody]ClienteDTO ClienteAlterar, int IdCliente)
+        public IActionResult Alterar([FromBody]ClienteDTO ClienteAlterar, int IdCliente)
         {
             int retorno = interfaceCliente.AlterarCliente(ClienteAlterar, IdCliente);
 
