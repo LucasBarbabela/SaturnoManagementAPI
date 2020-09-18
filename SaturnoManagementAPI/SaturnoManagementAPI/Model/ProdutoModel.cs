@@ -117,12 +117,14 @@ namespace SaturnoManagementAPI.Model
                 if (produtoAntigo == null)
                     return 404;
                 else
+                {
                     produtoAntigo.Nome = NovoProduto.Nome;
                     produtoAntigo.Descricao = NovoProduto.Descricao;
                     produtoAntigo.Permissao = NovoProduto.Permissao;
                     produtoAntigo.PrecoCompra = NovoProduto.PrecoCompra;
                     produtoAntigo.Quantidade = NovoProduto.Quantidade;
-
+                }
+                   
                 contexto.SaveChanges();
 
                 return 201;

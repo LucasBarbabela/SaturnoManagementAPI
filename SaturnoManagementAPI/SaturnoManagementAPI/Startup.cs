@@ -36,6 +36,7 @@ namespace SaturnoManagementAPI
             services.AddScoped<ERPContext, ERPContext>();
             services.AddScoped<ICliente, ClienteModel>();
             services.AddScoped<IProduto, ProdutoModel>();
+            services.AddScoped<IUsuario, UsuarioModel>();
             services.AddControllers();
         }
 

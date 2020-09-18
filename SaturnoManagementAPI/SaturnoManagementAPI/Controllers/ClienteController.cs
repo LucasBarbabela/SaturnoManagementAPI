@@ -28,7 +28,7 @@ namespace SaturnoManagementAPI.Controllers
         [Route("Cadastrar")]
         public void Cadastar(ClienteDTO NovoCliente)
         { 
-            interfaceCliente.CadastrarCliente(NovoCliente);
+            interfaceCliente.Cadastrar(NovoCliente);
         }
 
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -37,7 +37,7 @@ namespace SaturnoManagementAPI.Controllers
         [Route("Buscar/{IdCliente}")]
         public IActionResult Buscar(int IdCliente)
         {
-            ClienteDTO retorno = interfaceCliente.BuscarCliente(IdCliente);
+            ClienteDTO retorno = interfaceCliente.Buscar(IdCliente);
             if (retorno != null)
                 return Ok(retorno);
             else
@@ -50,7 +50,7 @@ namespace SaturnoManagementAPI.Controllers
         [Route("Listar/{TipoCliente}")] 
         public IActionResult Listar(PermissaoEnum TipoCliente)
         {
-            List<ClienteDTO> retorno = interfaceCliente.ListarCliente(TipoCliente);
+            List<ClienteDTO> retorno = interfaceCliente.Listar(TipoCliente);
 
             if (retorno != null)
                 return Ok(retorno);
@@ -62,7 +62,7 @@ namespace SaturnoManagementAPI.Controllers
         [Route("Deletar/{IdCliente}")]
         public ClienteDTO Deletar(int IdCliente)
         {
-            return interfaceCliente.DeletarCliente(IdCliente);
+            return interfaceCliente.Deletar(IdCliente);
         }
 
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -71,7 +71,7 @@ namespace SaturnoManagementAPI.Controllers
         [Route("Alterar/{IdCliente}")]
         public IActionResult Alterar([FromBody]ClienteDTO ClienteAlterar, int IdCliente)
         {
-            int retorno = interfaceCliente.AlterarCliente(ClienteAlterar, IdCliente);
+            int retorno = interfaceCliente.Alterar(ClienteAlterar, IdCliente);
 
             if (retorno == 201)
                 return Ok(ClienteAlterar);

@@ -59,3 +59,4 @@ C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoMan
 C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\obj\Debug\netcoreapp3.1\SaturnoManagementAPI.dll
 C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\obj\Debug\netcoreapp3.1\SaturnoManagementAPI.pdb
 C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\obj\Debug\netcoreapp3.1\SaturnoManagementAPI.genruntimeconfig.cache
+C:\Users\lucas\source\repos\SaturnoManagementAPI\SaturnoManagementAPI\SaturnoManagementAPI\obj\Debug\netcoreapp3.1\SaturnoManagementAPI.csprojAssemblyReference.cache

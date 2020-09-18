@@ -24,7 +24,7 @@ namespace SaturnoManagementAPI.Controllers
 
         [HttpPost]
         [Route("Cadastrar")]
-        public void CadastrarProduto(ProdutoDTO NovoProduto)
+        public void Cadastrar(ProdutoDTO NovoProduto)
         {
             interfaceProduto.CadastrarProduto(NovoProduto);
         }
